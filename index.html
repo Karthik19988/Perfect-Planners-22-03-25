@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Perfect Planners Tours & Travels Agency</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo.jpeg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/responsive.css">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+       
+      
+    <style>
+         #map {
+            height: 100vh;
+            width: 100%;
+        }
+        .carousel-item {
+            height: 80vh;
+            /* Set the carousel item to take up the full height of the viewport */
+            min-height: 300px;
+            /* Provide a minimum height for smaller screens */
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            /* Ensures the image covers the entire item without stretching */
+            width: 100%;
+            /* Make the image width 100% */
+            height: 100%;
+            /* Make the image height 100% */
+        }
+.container-fluid{
+    justify-content: center;
+    align-items: center;
+}
+        .carousel-caption {
+            position: absolute;
+            top: 70%;
+            transform: translateY(-50%);
+            /* Vertically center the caption */
+        }
+
+        .glass-navbar {
+            background: rgba(255, 255, 255, 0.2);
+            /* Transparent white background */
+            backdrop-filter: blur(10px);
+            /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(10px);
+            /* Frosted glass effect for Safari */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            /* Optional border to define edges */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: black;
+            /* White text for better contrast */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: #f5b041;
+            /* Highlight color on hover or active links */
+        }
+
+        .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.3);
+            /* Transparent background for toggler */
+        }
+
+        .glass-navbar .dropdown-menu {
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Dropdown with semi-transparent background */
+            backdrop-filter: blur(40px);
+            border: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* .whatsapp-btn {
+            position: fixed;
+            bottom: 108px;
+            right: 47px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 4px 8px #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #399e5e;
+        } */
+        /* nav */
+        
+    /* Base styles for the navbar brand text */
+    .navbar-brand h4 {
+        font-size: 2rem; /* Default size for larger screens */
+        transition: font-size 0.3s; /* Smooth transition when resizing */
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+        .navbar-brand h4 {
+            font-size:10px; /* Smaller font size for mobile */
+        }
+        
+    }
+
+    /* Optional: Adjust image size if needed */
+    .navbar-brand img {
+        width: 50px; /* Adjust image width for better alignment with text */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+   
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 glass-navbar">
+            <a href="" class="navbar-brand p-0">
+                <h4 class="text-primary m-0"><img src="img/logo.jpeg" style="border-radius: 50%;" class="me-3"> PERFECT PLANNERS TOURS AND TRAVELS
+                </h4>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="service.html" class="dropdown-item">Tours & Travels</a>
+                            <a href="booking.html" class="dropdown-item">Visa Documentation</a>
+                        </div>
+                    </div>
+                    <a href="testimonial.html" class="nav-item nav-link">Testimonials</a>
+                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/bg-hero.jpg" class="d-block w-100" alt="Image 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="text-white">Enjoy Your Vacation With Us</h1>
+                        <p class="text-white">"Wishing you a vacation filled with relaxation and joy. Enjoy every
+                            moment!"</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/bg-1.jpg" class="d-block w-100" alt="Image 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="text-white">Explore Beautiful Destinations</h1>
+                        <p class="text-white">"Discover breathtaking landscapes and vibrant cultures with us."</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/home4.jpg" class="d-block w-100" alt="Image 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1 class="text-white">Adventure Awaits You</h1>
+                        <p class="text-white">"Embark on unforgettable adventures tailored just for you!"</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navbar & Hero End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/about1.jpeg" alt=""
+                            >
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h2 class="section-title bg-white text-start text-primary pe-3">About Us</h2>
+                    <h4 class="mb-4">Welcome to our<span class="text-primary"> PERFECT PLANNERS TOURS AND TRAVELS
+                        (National and International Tour Operator)</span>
+                    </h4>
+                    <p class="mb-4">We are a highly experienced agency specializing in travel arrangements, trip planning, and creating memorable journeys through our expertly managed tours. Our agency offers perfectly planned tour packages to destinations all over the world, ensuring an unforgettable experience in every trip.
+                    <p class="mb-4"> We provide seamless travel to all destinations by air, sea, and road. Additionally, we handle document clearance for immigration and embassy requirements for all countries.
+                    </p>
+                    <p class="mb-4">At Perfect Planners Tours and Travels, we believe:</p>
+                    <p class="mb-4 text-primary">"One satisfied client brings us hundreds of new opportunities...
+                        One unsatisfied client can take away thousands."</p>
+
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Personalized Travel
+                                Adventures</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Your Journey, Our
+                                Expertise</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Discover the World with
+                                Us</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tailored Travel
+                                Experiences</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Making Memories, One Trip
+                                at a Time</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Seamless & Sustainable
+                                Travel</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="about.html">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
+                <h1 class="mb-5">Our Services</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-plane-departure text-primary mb-4"></i>
+                            <h5>World Wide Tours</h5>
+                            <p>Explore global destinations with our expert-guided worldwide tours, tailored to your
+                                interests.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-map-marked-alt text-primary mb-4"></i>
+                            <h5>Local City Tours</h5>
+                            <p>Discover the beauty of local cities with our guided city tours that showcase the best
+                                attractions.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-plane text-primary mb-4"></i>
+                            <h5>Air Ticket Booking</h5>
+                            <p>Book domestic and international flights with ease through our reliable air ticketing
+                                services.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <!-- Certificate Attestation -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-file-alt text-primary mb-4"></i>
+                            <h5>Certificate Attestation</h5>
+                            <p>Get your documents attested for international use with our fast and efficient attestation
+                                services.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <!-- Immigration Clearance -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-passport text-primary mb-4"></i>
+                            <h5>Immigration Clearance</h5>
+                            <p>We assist with immigration clearance to ensure smooth travel to your destination.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <!-- All Country Visit Visa -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5>All Country Visit Visa</h5>
+                            <p>Obtain visit visas for any country through our comprehensive visa application services.
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <!-- Visa Stamping -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-stamp text-primary mb-4"></i>
+                            <h5>Visa Stamping</h5>
+                            <p>Get your visa stamped for smooth and secure travel to your destination country.</p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+                <!-- Tour Packages -->
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-route text-primary mb-4"></i>
+                            <h5>Tour Packages</h5>
+                            <p>Choose from a variety of customizable tour packages to suit your preferences and budget.
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service End -->
+
+
+    <!-- Destination Start -->
+
+    <div class="container-xxl py-5 destination">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
+                <h1 class="mb-5">Popular Destination</h1>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/pic10.jpeg" alt="">
+                                <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    30% OFF</div> -->
+                                <!-- <div
+                                    class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    Thailand</div> -->
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/pic11.jpeg" alt="" style="height: 68vh;width: 112%;">
+                                <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    25% OFF</div> -->
+                                <!-- <div
+                                    class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    Malaysia</div> -->
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/pic12.jpeg" alt="" style="height: 68vh;">
+                                <!-- <div class="bg-white text-danger fw-bold position-absolute top-0 start-0 m-3 py-1 px-2">
+                                    35% OFF</div> -->
+                                <!-- <div
+                                    class="bg-white text-primary fw-bold position-absolute bottom-0 end-0 m-3 py-1 px-2">
+                                    Australia</div> -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/pic7.jpeg" alt=""
+                            style="object-fit: cover;">
+                
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/home1.jpeg" alt="">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/home2.jpeg" alt="" style="height: 40vh;">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/pic2.jpeg" alt="" style="height: 40vh;">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/pic6.jpeg" alt="" style="height: 40vh;width:112%">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/pic8.jpeg" alt="" style="height: 40vh;width:112%;background-position: center center;">
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="package-item">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/pic13.jpeg" alt="" style="height: 40vh;width: 112%;">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5 destination">
+        <div class="container">
+
+            <div class="row g-3">
+                <div class="col-lg-7 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <!-- <img class="img-fluid" src="img/pic14.jpeg" alt=""> -->
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/pic15.jpeg" alt="" style="height: 50vh;">
+                            </a>
+                        </div>
+                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
+                            <a class="position-relative d-block overflow-hidden" href="">
+                                <img class="img-fluid" src="img/pic1.jpeg" alt="" style="height: 50vh;width:100%">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/pic4.jpeg" alt=""
+                            style="object-fit: cover;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
+                <h1 class="mb-5">Contact Us For Any Query</h1>
+            </div>
+            <div class="row g-4">
+                <!-- Contact Info Section -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h5>Get In Touch</h5>
+                    <p class="mb-4">Feel free to reach out to us for any queries or assistance. We are here to help you.
+                    </p>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-map-marker-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Office</h5>
+                            <p class="mb-0">635 B/2, First Floor, Sivanthipatti Main Road, Thiyagarajanagar,
+                                Palayamkottai, Tirunelveli - 627011</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Mobile</h5>
+                            <p class="mb-0">+91 7448806100</p>
+                            <p class="mb-0">+91 9894104469</p>
+
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+                            style="width: 50px; height: 50px;">
+                            <i class="fa fa-envelope-open text-white"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h5 class="text-primary">Email</h5>
+                            <p class="mb-0">nellainijam1980@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Map Section -->
+               <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3943.863059937817!2d77.749979!3d8.704551999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOMKwNDInMTYuNCJOIDc3wrA0NCc1OS45IkU!5e0!3m2!1sen!2sin!4v1729595008808!5m2!1sen!2sin" 
+                 style="height: 320px; width:400px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0">
+                </iframe>
+            </div>
+            
+            
+            
+
+
+                <!-- Contact Form Section -->
+                <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form id="contact-form" role="form">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control" id="name" name="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" name="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" name="subject" class="form-control" id="subject" name="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" name="message" placeholder="Leave a message here" id="message" name="message"
+                                              style="height: 100px"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit" onclick="sendMail(event)">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Process</h6>
+                <h1 class="mb-5">3 Easy Steps</h1>
+            </div>
+            <div class="row gy-5 gx-4 justify-content-center">
+                <!-- Step 1: Choose A Destination -->
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                            style="width: 100px; height: 100px;">
+                            <i class="fa fa-map-marker-alt fa-3x text-white"></i>
+                        </div>
+                        <h5 class="mt-4">Choose A Destination</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1">
+                        <hr class="w-50 mx-auto bg-primary mt-0">
+                        <p class="mb-0">Explore a wide range of destinations and pick the one that excites you the most
+                            for an unforgettable experience.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2: Pay Online -->
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                            style="width: 100px; height: 100px;">
+                            <i class="fa fa-credit-card fa-3x text-white"></i>
+                        </div>
+                        <h5 class="mt-4">Pay Online</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1">
+                        <hr class="w-50 mx-auto bg-primary mt-0">
+                        <p class="mb-0">Complete your booking with our secure online payment system, ensuring your spot
+                            is reserved hassle-free.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3: Fly Today -->
+                <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="position-relative border border-primary pt-5 pb-4 px-4">
+                        <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
+                            style="width: 100px; height: 100px;">
+                            <i class="fa fa-plane-departure fa-3x text-white"></i>
+                        </div>
+                        <h5 class="mt-4">Fly Today</h5>
+                        <hr class="w-25 mx-auto bg-primary mb-1">
+                        <hr class="w-50 mx-auto bg-primary mt-0">
+                        <p class="mb-0">Pack your bags and get ready for your adventure. With everything sorted, you're
+                            just a flight away!</p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
+                <h1 class="mb-5">Our Clients Say!!!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="img/testimonial-1.jpg"
+                        style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Emily Parker</h5>
+                    <p>London, UK</p>
+                    <p class="mb-0">"I had an incredible experience booking my vacation through this agency. Everything
+                        was seamless, and the destinations recommended were absolutely stunning. Thank you for making my
+                        trip unforgettable!"</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="img/testimonial-2.jpg"
+                        style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Michael Johnson</h5>
+                    <p>Toronto, Canada</p>
+                    <p class="mt-2 mb-0">"The customer service was top-notch! From helping me choose the right
+                        destination to arranging all the details, everything was taken care of. I highly recommend this
+                        agency for stress-free travel planning."</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="img/testimonial-3.jpg"
+                        style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Sophia Lee</h5>
+                    <p>Sydney, Australia</p>
+                    <p class="mt-2 mb-0">"I’ve never traveled so comfortably! Everything was organized perfectly, and
+                        the suggestions on tours and activities made my trip to Europe an absolute dream. Highly
+                        recommend them!"</p>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="img/testimonial-4.jpg"
+                        style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">David Martinez</h5>
+                    <p>Barcelona, Spain</p>
+                    <p class="mt-2 mb-0">"This was the best travel experience I’ve ever had! The agency helped me pick
+                        the perfect location and made sure I had everything I needed for a smooth and exciting
+                        vacation."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-12">
+                    <h4 class="text-white mb-3">PERFECT PLANNERS TOURS AND TRAVELS</h4>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="service.html">Services</a>
+                    <a class="btn btn-link" href="testimonial.html">Testimonials</a>
+
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <!-- <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">FAQs & Help</a> -->
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h4 class="text-white mb-3">Contact Us</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>635 B/2, First Floor, Sivanthipatti Main Road, Thiyagarajanagar,
+                        Palayamkottai, Tirunelveli - 627011</p>
+                    <p class="mb-2">
+                        <i class="fa fa-phone-alt me-3"></i>+91 7448806100 , +91 9894104469
+                    </p>
+
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>nellainijam1980@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/nijam.theen.39?mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@perectplanners_travel?si=akHWGOzdvcdbKA8h"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/nellainijam/profilecard/?igsh=M293aWdwdzdzMXk0"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h4 class="text-white mb-3">Gallery</h4>
+                    <div class="row g-2 pt-2">
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/home1.jpeg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/home2.jpeg" alt="" style="height:13vh">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/home3.jpg" alt="" style="height:13vh">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/pic1.jpeg" alt="" style="height:14vh;width:100%">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/pic2.jpeg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid bg-light p-1" src="img/pic3.jpeg" alt="">
+                        </div>
+                    </div>
+                </div>
+               
+                </div>
+
+            </div>
+       
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#" style="text-decoration: none;">Perfect Planners Tours &
+                            Travels</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://vosatech.com">Vosa Tech</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Footer End -->
+
+
+ <!-- Back to Top -->
+ <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+    <i class="bi bi-arrow-up"></i>
+</a>
+<a href="https://wa.me/7448806100?text=Hello, I would like to inquire about your services."
+    class="btn btn-lg btn-success btn-lg-square whatsapp-btn back-to-top" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+   
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    emailjs.init("BbOdCOUn2YT7bPzbs"); // Your EmailJS Public Key
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm('service_aajxnv5', 'template_av2v0ub', this)
+            .then(function(response) {
+                console.log('Sent successfully', response);
+                alert('Email sent successfully!');
+            }, function(error) {
+                console.error('Failed to send', error);
+                alert('Failed to send email. Check console for details.');
+            });
+    });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".testimonial-carousel").owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                items: 1
+            });
+        });
+
+
+        
+    </script>
+
+</body>
+
+</html>
